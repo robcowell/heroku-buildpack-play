@@ -12,7 +12,7 @@ BIN_DIR=$(cd $(dirname $0); pwd) # absolute path
 . $BIN_DIR/common.sh
 
 # source in output functions
-source "${BUILD_DIR}/lib/output.sh"
+. /lib/output.sh
 
 S3_BASE_URL="${BUILDPACK_S3_BASE_URL:-"https://heroku-buildpack-python.s3.us-east-1.amazonaws.com"}"
 #S3_BASE_URL="${BUILDPACK_S3_BASE_URL:-"https://buildpack-registry.s3.amazonaws.com"}"
