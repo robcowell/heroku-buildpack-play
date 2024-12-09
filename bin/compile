@@ -76,16 +76,19 @@ echo "Play path: $PLAY_PATH"
 echo "Ivy path: $IVY_PATH"
 echo "Cache path: $CACHE_DIR"
 
-for DIR in $PLAY_PATH $IVY_PATH ; do
-  echo "Removing $DIR"
-  rm -rf $DIR
-  if [ -d $CACHE_DIR/$DIR ]; then
-  echo "Copying $DIR from $CACHE_DIR"
-    cp -r $CACHE_DIR/$DIR $DIR
-  fi
-done
+#for DIR in $PLAY_PATH $IVY_PATH ; do
+#  echo "Removing $DIR"
+#  rm -rf $DIR
+#  if [ -d $CACHE_DIR/$DIR ]; then
+#  echo "Copying $DIR from $CACHE_DIR"
+#    cp -r $CACHE_DIR/$DIR $DIR
+#  else
+#    echo "Cache not found for $DIR"
+#  fi
+#done
 
 # Install the custom Ivy settings
+echo "Looking for custom Ivy settings..."
 if [ -d ${IVY_PATH}-overlay ]; then
   echo -n "-----> Installing custom Ivy files..."
   mkdir -p ${IVY_PATH}
