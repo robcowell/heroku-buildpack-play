@@ -23,7 +23,17 @@ export_env_dir $ENV_DIR
 PYTHON_BUILD_PACK=${PYTHON_BUILD_PACK:-"https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku/python.tgz"}
 mkdir -p /tmp/python
 curl --silent --location $PYTHON_BUILD_PACK | tar xzm -C /tmp/python --strip-components=1
-. /tmp/python/lib/output.sh
+. "${BUILDPACK_DIR}/bin/utils"
+. "${BUILDPACK_DIR}/lib/utils.sh"
+. "${BUILDPACK_DIR}/lib/cache.sh"
+. "${BUILDPACK_DIR}/lib/hooks.sh"
+. "${BUILDPACK_DIR}/lib/metadata.sh"
+. "${BUILDPACK_DIR}/lib/output.sh"
+. "${BUILDPACK_DIR}/lib/package_manager.sh"
+. "${BUILDPACK_DIR}/lib/pip.sh"
+. "${BUILDPACK_DIR}/lib/pipenv.sh"
+. "${BUILDPACK_DIR}/lib/python_version.sh"
+. "${BUILDPACK_DIR}/lib/poetry.sh"
 . /tmp/python/bin/steps/python
 
 JVM_COMMON_BUILDPACK=${JVM_COMMON_BUILDPACK:-"https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku/jvm.tgz"}
