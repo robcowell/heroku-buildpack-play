@@ -15,6 +15,7 @@ export_env_dir() {
 
 get_play_version()
 {
+  echo "File specificed : $1"
   local file=${1?"No file specified"}
 
   if [ ! -f $file ]; then
