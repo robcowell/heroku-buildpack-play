@@ -19,6 +19,8 @@ S3_BASE_URL="${BUILDPACK_S3_BASE_URL:-"https://heroku-buildpack-python.s3.us-eas
 
 python_full_version="3.12.3"
 python_major_version="3.12"
+python_version_origin="3.12.3"
+
 export_env_dir $ENV_DIR
 PYTHON_BUILD_PACK=${PYTHON_BUILD_PACK:-"https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku/python.tgz"}
 mkdir -p /tmp/python
