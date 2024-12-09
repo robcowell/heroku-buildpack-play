@@ -98,6 +98,7 @@ else
   echo "-----> No custom Ivy settings found"
 fi
 
+echo "Before the version check"
 PLAY_VERSION=$(get_play_version conf/dependencies.yml)
 echo "-----> Play! version $PLAY_VERSION"
 
