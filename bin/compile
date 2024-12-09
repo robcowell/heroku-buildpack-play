@@ -72,6 +72,9 @@ echo "-----> Changing directory to $BUILD_DIR"
 cd $BUILD_DIR
 
 # Unpack cache
+echo "Play path: $PLAY_PATH"
+echo "Ivy path: $IVY_PATH"
+echo "Cache path: $CACHE_DIR"
 for DIR in $PLAY_PATH $IVY_PATH ; do
   rm -rf $DIR
   if [ -d $CACHE_DIR/$DIR ]; then
