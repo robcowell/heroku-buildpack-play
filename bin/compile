@@ -12,7 +12,7 @@ BIN_DIR=$(cd $(dirname $0); pwd) # absolute path
 . $BIN_DIR/common.sh
 
 # The absolute path to the root of the buildpack.
-BUILDPACK_DIR=$(cd "$(dirname "$(dirname "${BASH_SOURCE[0]}")")" && pwd)
+#BUILDPACK_DIR=$(cd "$(dirname "$(dirname "${BASH_SOURCE[0]}")")" && pwd)
 
 S3_BASE_URL="${BUILDPACK_S3_BASE_URL:-"https://heroku-buildpack-python.s3.us-east-1.amazonaws.com"}"
 #S3_BASE_URL="${BUILDPACK_S3_BASE_URL:-"https://buildpack-registry.s3.amazonaws.com"}"
