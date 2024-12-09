@@ -11,9 +11,10 @@ BIN_DIR=$(cd $(dirname $0); pwd) # absolute path
 # source in common functions
 . $BIN_DIR/common.sh
 
-#S3_BASE_URL="${BUILDPACK_S3_BASE_URL:-"https://heroku-buildpack-python.s3.us-east-1.amazonaws.com"}"
-S3_BASE_URL="${BUILDPACK_S3_BASE_URL:-"https://buildpack-registry.s3.amazonaws.com"}"
-export S3_BASE_URL
+S3_BASE_URL="${BUILDPACK_S3_BASE_URL:-"https://heroku-buildpack-python.s3.us-east-1.amazonaws.com"}"
+#S3_BASE_URL="${BUILDPACK_S3_BASE_URL:-"https://buildpack-registry.s3.amazonaws.com"}"
+export $S3_BASE_URL
+echo $S3_BASE_URL
 
 export_env_dir $ENV_DIR
 PYTHON_BUILD_PACK=${PYTHON_BUILD_PACK:-"https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku/python.tgz"}
