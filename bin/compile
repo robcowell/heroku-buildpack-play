@@ -68,6 +68,7 @@ PLAY_PATH=".play"
 IVY_PATH=".ivy2"
 
 # Change dir to handle relative paths
+echo "-----> Changing directory to $BUILD_DIR"
 cd $BUILD_DIR
 
 # Unpack cache
