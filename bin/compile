@@ -80,6 +80,7 @@ for DIR in $PLAY_PATH $IVY_PATH ; do
   echo "Removing $DIR"
   rm -rf $DIR
   if [ -d $CACHE_DIR/$DIR ]; then
+  echo "Copying $DIR from $CACHE_DIR"
     cp -r $CACHE_DIR/$DIR $DIR
   fi
 done
