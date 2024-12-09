@@ -23,11 +23,11 @@ export_env_dir $ENV_DIR
 PYTHON_BUILD_PACK=${PYTHON_BUILD_PACK:-"https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku/python.tgz"}
 mkdir -p /tmp/python
 curl --silent --location $PYTHON_BUILD_PACK | tar xzm -C /tmp/python --strip-components=1
-. /tmp/python/bin/utils
+#. /tmp/python/bin/utils
 . /tmp/python/lib/utils.sh
 . /tmp/python/lib/cache.sh
 . /tmp/python/lib/hooks.sh
-. /tmp/python/lib/metadata.sh
+#. /tmp/python/lib/metadata.sh
 . /tmp/python/lib/output.sh
 . /tmp/python/lib/package_manager.sh
 . /tmp/python/lib/pip.sh
