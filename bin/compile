@@ -102,6 +102,7 @@ fi
 
 # Install Play! or update the version
 if [ ! -f $PLAY_PATH/play ]; then
+  echo "Installing Play! $PLAY_VERSION..."
   install_play $PLAY_VERSION
 else
   INSTALLED_PLAY_VERSION=`cat $PLAY_PATH/framework/src/play/version`
