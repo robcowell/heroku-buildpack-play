@@ -18,9 +18,10 @@ get_play_version()
   local file=${1?"No file specified"}
 
   if [ ! -f $file ]; then
+    echo "File not found: $file"
     return 0
   fi
-
+  echo "-----> Detecting Play! version with grep....."
   grep -P '.*-.*play[ \t]+[0-9\.]' ${file} | sed -E -e 's/[ \t]*-[ \t]*play[ \t]+([0-9A-Za-z\.]*).*/\1/'
 }
 
