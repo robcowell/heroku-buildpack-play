@@ -14,7 +14,8 @@ BIN_DIR=$(cd $(dirname $0); pwd) # absolute path
 S3_BASE_URL="${BUILDPACK_S3_BASE_URL:-"https://heroku-buildpack-python.s3.us-east-1.amazonaws.com"}"
 #S3_BASE_URL="${BUILDPACK_S3_BASE_URL:-"https://buildpack-registry.s3.amazonaws.com"}"
 
-
+python_full_version="3.12.3"
+python_version="3.12"
 export_env_dir $ENV_DIR
 PYTHON_BUILD_PACK=${PYTHON_BUILD_PACK:-"https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku/python.tgz"}
 mkdir -p /tmp/python
