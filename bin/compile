@@ -101,8 +101,8 @@ fi
 echo "Before the version check"
 #PLAY_VERSION=$(get_play_version conf/dependencies.yml)
 #echo "-----> Play! version $PLAY_VERSION"
-
-DEFAULT_PLAY_VERSION="1.3.1"
+PLAY_VERSION="1.7.1"
+DEFAULT_PLAY_VERSION="1.7.1"
 VERSION_DECLARED=true
 
 if [ -z "$PLAY_VERSION" ] ; then
