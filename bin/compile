@@ -12,6 +12,10 @@ BIN_DIR=$(cd $(dirname $0); pwd) # absolute path
 . $BIN_DIR/common.sh
 
 export_env_dir $ENV_DIR
+PYTHON_BUILD_PACK=${PYTHON_BUILD_PACK:-"https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku/python.tgz"}
+mkdir -p /tmp/python
+curl --silent --location $PYTHON_BUILD_PACK | tar xzm -C /tmp/python --strip-components=1
+. /tmp/python/bin/util
 
 JVM_COMMON_BUILDPACK=${JVM_COMMON_BUILDPACK:-"https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku/jvm.tgz"}
 mkdir -p /tmp/jvm-common
