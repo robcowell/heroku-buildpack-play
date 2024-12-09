@@ -26,14 +26,14 @@ curl --silent --location $PYTHON_BUILD_PACK | tar xzm -C /tmp/python --strip-com
 #. /tmp/python/bin/utils
 . /tmp/python/lib/utils.sh
 . /tmp/python/lib/cache.sh
-. /tmp/python/lib/hooks.sh
+#. /tmp/python/lib/hooks.sh
 #. /tmp/python/lib/metadata.sh
 . /tmp/python/lib/output.sh
-. /tmp/python/lib/package_manager.sh
-. /tmp/python/lib/pip.sh
-. /tmp/python/lib/pipenv.sh
+#. /tmp/python/lib/package_manager.sh
+#. /tmp/python/lib/pip.sh
+#. /tmp/python/lib/pipenv.sh
 . /tmp/python/lib/python_version.sh
-. /tmp/python/lib/poetry.sh
+#. /tmp/python/lib/poetry.sh
 . /tmp/python/bin/steps/python
 
 JVM_COMMON_BUILDPACK=${JVM_COMMON_BUILDPACK:-"https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku/jvm.tgz"}
