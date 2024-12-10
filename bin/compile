@@ -135,12 +135,10 @@ echo "       Building Play! application at directory $APP_DIR"
 CLEAN_CMD="$PLAY_PATH/play clean $APP_DIR --silent 2>&1"
 echo "       Cleaning target directory: $CLEAN_CMD"
 eval "$CLEAN_CMD" | sed -u 's/^/       /'
-echo "       Listing modules directory"
-ls $APP_DIR/modules
 check_compile_status
 
 #DEPENDENCIES_CMD="$PLAY_PATH/play dependencies $APP_DIR --forProd --forceCopy --silent -Duser.home=$BUILD_DIR 2>&1"
-DEPENDENCIES_CMD="$PLAY_PATH/play dependencies $APP_DIR --forProd --forceCopy -Duser.home=$BUILD_DIR"
+DEPENDENCIES_CMD="$PLAY_PATH/play dependencies $APP_DIR --debug --forProd --forceCopy -Duser.home=$BUILD_DIR"
 echo "       Resolving dependencies: $DEPENDENCIES_CMD"
 eval "$DEPENDENCIES_CMD" | sed -u 's/^/       /'
 check_compile_status
