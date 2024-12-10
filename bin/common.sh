@@ -41,6 +41,7 @@ download_play_official() {
   local playTarFile=${2}
   local playZipFile="play-${playVersion}.zip"
   local playUrl="https://github.com/playframework/play1/releases/download/${playVersion}/${playZipFile}"
+  #local playUrl="https://github.com/robcowell/play1
   status=$(curl --retry 3 --silent --head -w %{http_code} -L ${playUrl} -o /dev/null)
   if [ "$status" != "200" ]; then
     error "Could not locate: ${playUrl}
