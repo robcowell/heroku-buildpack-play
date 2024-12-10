@@ -30,17 +30,17 @@ curl --silent --location $PYTHON_BUILD_PACK | tar xzm -C /tmp/python --strip-com
 
 #hardcode the "virtual" buildpack dir
 BUILDPACK_DIR="/tmp/python"
-#. /tmp/python/bin/utils
+. /tmp/python/bin/utils
 . /tmp/python/lib/utils.sh
 . /tmp/python/lib/cache.sh
-#. /tmp/python/lib/hooks.sh
+. /tmp/python/lib/hooks.sh
 . /tmp/python/lib/metadata.sh
 . /tmp/python/lib/output.sh
-#. /tmp/python/lib/package_manager.sh
-#. /tmp/python/lib/pip.sh
-#. /tmp/python/lib/pipenv.sh
+. /tmp/python/lib/package_manager.sh
+. /tmp/python/lib/pip.sh
+. /tmp/python/lib/pipenv.sh
 . /tmp/python/lib/python_version.sh
-#. /tmp/python/lib/poetry.sh
+. /tmp/python/lib/poetry.sh
 . /tmp/python/bin/steps/python
 
 JVM_COMMON_BUILDPACK=${JVM_COMMON_BUILDPACK:-"https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku/jvm.tgz"}
@@ -145,10 +145,10 @@ check_compile_status
 
 #PRECOMPILE_CMD="$PLAY_PATH/play precompile $APP_DIR --silent 2>&1"
 #non-silent output for debugging
-#PRECOMPILE_CMD="$PLAY_PATH/play precompile $APP_DIR"
-#echo "       Precompiling: $PRECOMPILE_CMD"
-#eval "$PRECOMPILE_CMD" | sed -u 's/^/       /'
-#check_compile_status
+PRECOMPILE_CMD="$PLAY_PATH/play precompile $APP_DIR"
+echo "       Precompiling: $PRECOMPILE_CMD"
+eval "$PRECOMPILE_CMD" | sed -u 's/^/       /'
+check_compile_status
 
 # Repack Play! framework into cache
 mkdir -p $CACHE_DIR
