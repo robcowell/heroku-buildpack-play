@@ -145,7 +145,7 @@ check_compile_status
 
 #PRECOMPILE_CMD="$PLAY_PATH/play precompile $APP_DIR --silent 2>&1"
 #non-silent output for debugging
-PRECOMPILE_CMD="$PLAY_PATH/play precompile --verbose $APP_DIR"
+PRECOMPILE_CMD="$PLAY_PATH/play precompile $APP_DIR"
 echo "       Precompiling: $PRECOMPILE_CMD"
 eval "$PRECOMPILE_CMD" | sed -u 's/^/       /'
 check_compile_status
